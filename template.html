@@ -1,0 +1,27 @@
+<script defer>
+    const svgs = [XXX];
+
+    let index = 0;
+
+    function update_view() {
+        document.querySelector("#container").innerHTML = svgs[index];
+        document.querySelector("#index-label").innerHTML = "Iteration index: " + index;
+    }
+
+    function next() {
+        index++;
+        update_view();
+    }
+
+    function previous() {
+        index--;
+        update_view();
+    }
+
+    requestAnimationFrame(update_view);
+</script>
+
+<div id="container"></div>
+<div id="index-label"></div>
+<button onclick="previous()">Previous</button>
+<button onclick="next()">Next</button>
