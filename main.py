@@ -1,4 +1,5 @@
 import argparse
+import pathlib
 import re
 import requests
 from subprocess import check_output
@@ -8,8 +9,11 @@ from termcolor import cprint
 
 LOG_PATH = "test_log.txt"
 VIS_URL = "http://www.fit.vutbr.cz/study/courses/IZP/public/cluster.php"
-TEMPLATE_PATH = "template.html"
+TEMPLATE_FNAME = "template.html"
 HTML_OUTPUT_PATH = "test_output.html"
+
+
+file_dir = pathlib.Path(__file__).parent.resolve()
 
 
 def parse_args():
@@ -61,7 +65,9 @@ def scrape_visualiser(program_output):
 
 
 def generate_output(svgs: List[str]):
-    with open(TEMPLATE_PATH) as f:
+    template_path = pathlib.Path(file_dir).joinpath(TEMPLATE_FNAME)
+
+    with open(template_path) as f:
         template = f.read()
 
     svgs = [f"`{out}`" for out in svgs]
