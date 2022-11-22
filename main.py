@@ -94,7 +94,7 @@ def main():
     outputs = []
     svgs = []
 
-    for i in range(object_count, 1, -1):
+    for i in range(object_count, 0, -1):
         print("\nRunning iteration:", object_count - i)
 
         out = run_clusters(program_path, input_path, i)
