@@ -5,7 +5,7 @@ Utilitka po spusteni spusti cluster program tolikrat, kolik je objektu v input s
 **Setup:**
 
 ```
-pip3 install requests
+pip3 install requests termcolor
 ```
 
 **Usage:**
