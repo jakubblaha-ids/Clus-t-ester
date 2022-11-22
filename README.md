@@ -14,4 +14,10 @@ pip3 install requests
 python3 main.py ./cluster input.txt
 ```
 
+V MACu jde otevrit .html v defaultnim prohlizeci pomoci nasledujiciho commandu. Nevim jak to je jinde.
+
+```
+open test_output.html
+```
+
 
